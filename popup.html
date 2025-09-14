@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Article Quizzer</title>
+    <script src="popup.js" defer></script>
+    
+<style>
+  body {
+    width: 400px;  /* Adjust as needed */
+    font-family: sans-serif;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1em;
+    padding: 0.5em;
+    margin: 0.25em 0;
+  }
+
+  p {
+    margin: 0.5em 0;
+  }
+
+#reset-key {
+  background-color: #eee;
+  font-size: 0.9em;
+}
+
+#tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+  }
+
+  .tab-button {
+    flex: 1;
+    padding: 0.5em;
+    margin: 0;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .tab-button:first-child {
+    border-right: none;
+  }
+
+  .tab-button.active {
+    background-color: #ddd;
+    border-bottom: 2px solid black;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    font-size: 1em;
+  }
+
+</style>
+
+  </head>
+  <body>
+  <h1>Article Quiz</h1>
+
+  <!-- Tab navigation -->
+  <div id="tabs">
+  <button id="tab-quiz" class="tab-button">Quiz</button>
+  <button id="tab-settings" class="tab-button">Settings</button>
+</div>
+
+
+  <!-- API Key Prompt -->
+  <div id="apikey-prompt">
+    <p>Enter your OpenAI API key:</p>
+    <input id="apikey-input" type="password" style="width:100%; padding:0.5em;" />
+    <button id="save-key">Save Key</button>
+    <p><small>Need one? <a href="https://platform.openai.com/account/api-keys" target="_blank">Get it here</a></small></p>
+  </div>
+
+  <!-- Quiz Tab -->
+  <div id="quiz-tab" style="display:none;">
+    <button id="generate">Create Quiz</button>
+    <div id="quiz-container" style="margin-top: 1em;"></div>
+    <div id="quiz-results" style="margin-top: 1em; font-weight: bold;"></div>
+  </div>
+
+  <!-- Settings Tab -->
+  <div id="settings-tab" style="display:none;">
+    <p>Reset your stored OpenAI API key:</p>
+    <button id="reset-key">Reset API Key</button>
+  </div>
+</body>
+</html>
